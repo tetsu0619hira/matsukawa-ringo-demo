@@ -142,31 +142,31 @@
       overflow: hidden;
       color: #fff;
       background:
-        radial-gradient(circle at 78% 30%, rgba(221, 80, 58, 0.92) 0 7%, rgba(221, 80, 58, 0) 8%),
-        radial-gradient(circle at 62% 64%, rgba(192, 57, 43, 0.72) 0 8%, rgba(192, 57, 43, 0) 9%),
-        radial-gradient(circle at 20% 26%, rgba(247, 184, 72, 0.18), rgba(247, 184, 72, 0) 28%),
-        linear-gradient(135deg, rgba(27, 67, 50, 0.98), rgba(45, 106, 79, 0.93) 48%, rgba(105, 35, 29, 0.9)),
-        repeating-linear-gradient(115deg, rgba(255, 255, 255, 0.08) 0 1px, transparent 1px 120px);
+        linear-gradient(90deg, rgba(17, 43, 31, 0.84) 0%, rgba(27, 67, 50, 0.72) 46%, rgba(27, 67, 50, 0.36) 100%),
+        linear-gradient(0deg, rgba(27, 67, 50, 0.5), rgba(27, 67, 50, 0.04) 44%),
+        url("assets/hero-orchard.jpg") center 58% / cover no-repeat;
     }
 
     .hero::before,
     .hero::after {
       content: "";
       position: absolute;
-      inset: auto -8% -26% -8%;
-      height: 54%;
+      pointer-events: none;
+    }
+
+    .hero::before {
+      inset: 0;
       background:
-        radial-gradient(ellipse at 18% 100%, rgba(245, 240, 232, 0.2), transparent 45%),
-        radial-gradient(ellipse at 78% 100%, rgba(64, 145, 108, 0.34), transparent 48%),
-        linear-gradient(8deg, rgba(14, 49, 35, 0.96), rgba(45, 106, 79, 0.56));
-      clip-path: polygon(0 38%, 15% 25%, 30% 42%, 45% 20%, 63% 36%, 80% 18%, 100% 34%, 100% 100%, 0 100%);
+        radial-gradient(circle at 84% 28%, rgba(192, 57, 43, 0.22), transparent 22%),
+        radial-gradient(circle at 18% 72%, rgba(245, 240, 232, 0.14), transparent 30%);
     }
 
     .hero::after {
-      inset: auto -10% -30% -10%;
-      height: 47%;
-      opacity: 0.5;
-      transform: scaleX(-1);
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 24%;
+      background: linear-gradient(0deg, rgba(27, 67, 50, 0.6), rgba(27, 67, 50, 0));
     }
 
     .hero-inner {
@@ -593,8 +593,9 @@
       }
 
       .hero h1 {
-        font-size: 36px;
+        font-size: 34px;
         line-height: 1.26;
+        max-width: 350px;
         text-wrap: wrap;
         word-break: break-all;
       }
@@ -607,6 +608,7 @@
       .order-card p,
       .contact-panel p {
         font-size: 15px;
+        max-width: 350px;
         word-break: break-all;
       }
 
@@ -672,7 +674,7 @@
     <section class="hero" aria-label="松川りんご農園（仮）の紹介">
       <div class="hero-inner">
         <p class="eyebrow">長野県北安曇郡松川村から産地直送</p>
-        <h1>北アルプスの恵みで育てた、信州のりんご</h1>
+        <h1>北アルプスの恵みで<br>育てた、<br>信州のりんご</h1>
         <p>松川村で4代続く農園が、昼夜の寒暖差と澄んだ水に育まれた旬の味を、ご家庭へ、贈り物へ、まっすぐお届けします。</p>
         <a class="button" href="#contact">ご注文はこちら</a>
       </div>
@@ -682,7 +684,7 @@
       <div class="container">
         <div class="section-heading">
           <p class="section-kicker">ABOUT</p>
-          <h2 class="section-title">松川村の風土に寄り添う、小さなりんご農園です</h2>
+          <h2 class="section-title">松川村の風土に寄り添う、<br>小さなりんご農園です</h2>
         </div>
         <div class="about-grid">
           <div>

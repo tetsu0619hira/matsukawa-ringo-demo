@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="長野県北安曇郡松川村の松川りんご農園（仮）。北アルプスの恵みで育てた、ふじ・シナノスイート・シナノゴールドなど信州りんごの産直・ギフト注文を承ります。">
+  <title>松川りんご農園（仮）｜長野県松川村の信州りんご産直</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --apple-red: #C0392B;
+      --forest: #2D6A4F;
+      --forest-dark: #1B4332;
+      --leaf: #40916C;
+      --cream: #F5F0E8;
+      --paper: #FFFCF7;
+      --ink: #2D241F;
+      --muted: #6F625B;
+      --line: rgba(45, 36, 31, 0.12);
+      --shadow: 0 20px 45px rgba(45, 36, 31, 0.12);
+      --radius: 8px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Noto Sans JP", system-ui, sans-serif;
+      color: var(--ink);
+      background: var(--cream);
+      line-height: 1.8;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img,
+    svg {
+      max-width: 100%;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(255, 252, 247, 0.92);
+      border-bottom: 1px solid rgba(45, 106, 79, 0.14);
+      backdrop-filter: blur(14px);
+    }
+
+    .header-inner {
+      width: min(1120px, calc(100% - 40px));
+      margin: 0 auto;
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .logo {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 900;
+      color: var(--forest-dark);
+      letter-spacing: 0;
+      white-space: nowrap;
+    }
+
+    .logo-mark {
+      width: 34px;
+      height: 34px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      color: #fff;
+      background: radial-gradient(circle at 35% 30%, #F9D8C7 0 11%, #D94A37 12% 46%, var(--apple-red) 47% 100%);
+      box-shadow: 0 7px 18px rgba(192, 57, 43, 0.24);
+      font-size: 18px;
+    }
+
+    .nav-toggle {
+      display: none;
+      width: 42px;
+      height: 42px;
+      border: 1px solid rgba(45, 106, 79, 0.22);
+      border-radius: var(--radius);
+      background: var(--paper);
+      color: var(--forest-dark);
+      cursor: pointer;
+    }
+
+    .nav-toggle span,
+    .nav-toggle::before,
+    .nav-toggle::after {
+      content: "";
+      display: block;
+      width: 18px;
+      height: 2px;
+      margin: 4px auto;
+      background: currentColor;
+      border-radius: 10px;
+    }
+
+    .site-nav {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--forest-dark);
+    }
+
+    .site-nav a {
+      padding: 10px 12px;
+      border-radius: var(--radius);
+    }
+
+    .site-nav a:hover,
+    .site-nav a:focus-visible {
+      background: rgba(45, 106, 79, 0.1);
+      outline: none;
+    }
+
+    .hero {
+      position: relative;
+      min-height: 690px;
+      display: grid;
+      align-items: center;
+      overflow: hidden;
+      color: #fff;
+      background:
+        radial-gradient(circle at 78% 30%, rgba(221, 80, 58, 0.92) 0 7%, rgba(221, 80, 58, 0) 8%),
+        radial-gradient(circle at 62% 64%, rgba(192, 57, 43, 0.72) 0 8%, rgba(192, 57, 43, 0) 9%),
+        radial-gradient(circle at 20% 26%, rgba(247, 184, 72, 0.18), rgba(247, 184, 72, 0) 28%),
+        linear-gradient(135deg, rgba(27, 67, 50, 0.98), rgba(45, 106, 79, 0.93) 48%, rgba(105, 35, 29, 0.9)),
+        repeating-linear-gradient(115deg, rgba(255, 255, 255, 0.08) 0 1px, transparent 1px 120px);
+    }
+
+    .hero::before,
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto -8% -26% -8%;
+      height: 54%;
+      background:
+        radial-gradient(ellipse at 18% 100%, rgba(245, 240, 232, 0.2), transparent 45%),
+        radial-gradient(ellipse at 78% 100%, rgba(64, 145, 108, 0.34), transparent 48%),
+        linear-gradient(8deg, rgba(14, 49, 35, 0.96), rgba(45, 106, 79, 0.56));
+      clip-path: polygon(0 38%, 15% 25%, 30% 42%, 45% 20%, 63% 36%, 80% 18%, 100% 34%, 100% 100%, 0 100%);
+    }
+
+    .hero::after {
+      inset: auto -10% -30% -10%;
+      height: 47%;
+      opacity: 0.5;
+      transform: scaleX(-1);
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+      width: min(1120px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 96px 0 120px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin: 0 0 18px;
+      color: #FFE9DA;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 42px;
+      height: 1px;
+      background: currentColor;
+    }
+
+    .hero h1 {
+      max-width: 820px;
+      margin: 0;
+      font-size: clamp(38px, 7vw, 76px);
+      line-height: 1.18;
+      font-weight: 900;
+      text-wrap: balance;
+      letter-spacing: 0;
+      overflow-wrap: anywhere;
+    }
+
+    .hero p {
+      max-width: 620px;
+      margin: 24px 0 36px;
+      color: rgba(255, 255, 255, 0.88);
+      font-size: clamp(16px, 2.2vw, 21px);
+      font-weight: 500;
+      overflow-wrap: anywhere;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 52px;
+      padding: 0 26px;
+      border: 0;
+      border-radius: var(--radius);
+      background: var(--apple-red);
+      color: #fff;
+      font-weight: 800;
+      box-shadow: 0 16px 30px rgba(94, 23, 17, 0.24);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    }
+
+    .button:hover,
+    .button:focus-visible {
+      transform: translateY(-2px);
+      background: #A83227;
+      box-shadow: 0 20px 36px rgba(94, 23, 17, 0.3);
+      outline: none;
+    }
+
+    .section {
+      padding: 92px 0;
+    }
+
+    .section.alt {
+      background: var(--paper);
+    }
+
+    .container {
+      width: min(1120px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .section-heading {
+      display: grid;
+      gap: 10px;
+      max-width: 760px;
+      margin-bottom: 38px;
+    }
+
+    .section-kicker {
+      margin: 0;
+      color: var(--apple-red);
+      font-size: 13px;
+      font-weight: 900;
+      letter-spacing: 0;
+    }
+
+    .section-title {
+      margin: 0;
+      color: var(--forest-dark);
+      font-size: clamp(28px, 4vw, 42px);
+      line-height: 1.3;
+      letter-spacing: 0;
+      overflow-wrap: anywhere;
+    }
+
+    .lead {
+      margin: 0;
+      color: var(--muted);
+      font-size: 17px;
+      overflow-wrap: anywhere;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(300px, 0.9fr);
+      gap: 46px;
+      align-items: start;
+    }
+
+    .about-copy {
+      margin: 0;
+      color: #403730;
+      font-size: 16px;
+    }
+
+    .about-copy + .about-copy {
+      margin-top: 16px;
+    }
+
+    .feature-list {
+      display: grid;
+      gap: 16px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .feature-item,
+    .variety-card,
+    .order-card {
+      background: rgba(255, 252, 247, 0.86);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .feature-item {
+      display: grid;
+      grid-template-columns: 52px 1fr;
+      gap: 16px;
+      align-items: start;
+      padding: 22px;
+    }
+
+    .feature-icon,
+    .step-number {
+      width: 52px;
+      height: 52px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: rgba(45, 106, 79, 0.1);
+      color: var(--forest);
+      font-size: 24px;
+      font-weight: 900;
+    }
+
+    .feature-item h3,
+    .variety-card h3,
+    .order-card h3 {
+      margin: 0 0 6px;
+      color: var(--forest-dark);
+      font-size: 20px;
+      line-height: 1.4;
+    }
+
+    .feature-item p,
+    .variety-card p,
+    .order-card p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .variety-card {
+      position: relative;
+      min-height: 282px;
+      padding: 30px;
+      overflow: hidden;
+    }
+
+    .variety-card::after {
+      content: "";
+      position: absolute;
+      right: -45px;
+      bottom: -50px;
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      background: rgba(192, 57, 43, 0.09);
+    }
+
+    .apple-icon {
+      display: inline-block;
+      margin-bottom: 16px;
+      font-size: 42px;
+      line-height: 1;
+    }
+
+    .season {
+      display: inline-flex;
+      align-items: center;
+      min-height: 30px;
+      margin: 16px 0 12px;
+      padding: 0 12px;
+      border-radius: 999px;
+      background: rgba(192, 57, 43, 0.1);
+      color: #9D2C22;
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    .order-card {
+      padding: 28px;
+    }
+
+    .step-number {
+      margin-bottom: 18px;
+      background: rgba(192, 57, 43, 0.1);
+      color: var(--apple-red);
+      font-size: 18px;
+    }
+
+    .order-note {
+      margin: 30px 0 0;
+      padding: 20px 24px;
+      border-left: 5px solid var(--apple-red);
+      background: rgba(192, 57, 43, 0.08);
+      color: #4A3D35;
+      font-weight: 700;
+    }
+
+    .contact-wrap {
+      display: grid;
+      grid-template-columns: minmax(280px, 0.82fr) minmax(0, 1fr);
+      gap: 42px;
+      align-items: start;
+    }
+
+    .contact-panel {
+      padding: 30px;
+      border-radius: var(--radius);
+      background: var(--forest-dark);
+      color: #fff;
+    }
+
+    .contact-panel h3 {
+      margin: 0 0 12px;
+      font-size: 24px;
+      line-height: 1.4;
+    }
+
+    .contact-panel p {
+      margin: 0;
+      color: rgba(255, 255, 255, 0.82);
+    }
+
+    .farm-info {
+      margin: 24px 0 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 10px;
+      color: rgba(255, 255, 255, 0.9);
+      font-size: 15px;
+    }
+
+    .contact-form {
+      display: grid;
+      gap: 18px;
+      padding: 32px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--paper);
+      box-shadow: var(--shadow);
+    }
+
+    .field {
+      display: grid;
+      gap: 8px;
+    }
+
+    label {
+      color: var(--forest-dark);
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    input,
+    textarea {
+      width: 100%;
+      border: 1px solid rgba(45, 36, 31, 0.18);
+      border-radius: var(--radius);
+      background: #fff;
+      color: var(--ink);
+      font: inherit;
+      line-height: 1.5;
+      padding: 13px 14px;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    textarea {
+      min-height: 150px;
+      resize: vertical;
+    }
+
+    input:focus,
+    textarea:focus {
+      border-color: var(--forest);
+      box-shadow: 0 0 0 4px rgba(45, 106, 79, 0.12);
+      outline: none;
+    }
+
+    .form-message {
+      min-height: 24px;
+      margin: 0;
+      color: var(--forest);
+      font-weight: 800;
+    }
+
+    .site-footer {
+      padding: 34px 0;
+      background: #172D23;
+      color: rgba(255, 255, 255, 0.78);
+    }
+
+    .footer-inner {
+      width: min(1120px, calc(100% - 40px));
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+      font-size: 14px;
+    }
+
+    .footer-name {
+      color: #fff;
+      font-weight: 900;
+    }
+
+    @media (max-width: 860px) {
+      .header-inner {
+        min-height: 64px;
+      }
+
+      .nav-toggle {
+        display: block;
+      }
+
+      .site-nav {
+        position: absolute;
+        left: 20px;
+        right: 20px;
+        top: 74px;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 12px;
+        border: 1px solid rgba(45, 106, 79, 0.16);
+        border-radius: var(--radius);
+        background: var(--paper);
+        box-shadow: var(--shadow);
+      }
+
+      .site-nav.is-open {
+        display: flex;
+      }
+
+      .site-nav a {
+        padding: 12px 14px;
+      }
+
+      .hero {
+        min-height: 620px;
+      }
+
+      .about-grid,
+      .contact-wrap {
+        grid-template-columns: 1fr;
+      }
+
+      .card-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .header-inner,
+      .hero-inner,
+      .container,
+      .footer-inner {
+        width: min(calc(100% - 28px), 1120px);
+      }
+
+      .logo {
+        font-size: 15px;
+      }
+
+      .hero {
+        min-height: 580px;
+      }
+
+      .hero-inner {
+        padding: 74px 0 104px;
+      }
+
+      .hero h1 {
+        font-size: 36px;
+        line-height: 1.26;
+        text-wrap: wrap;
+        word-break: break-all;
+      }
+
+      .hero p,
+      .about-copy,
+      .lead,
+      .feature-item p,
+      .variety-card p,
+      .order-card p,
+      .contact-panel p {
+        font-size: 15px;
+        word-break: break-all;
+      }
+
+      .section-title {
+        font-size: 27px;
+        line-height: 1.42;
+        word-break: break-all;
+      }
+
+      .section {
+        padding: 68px 0;
+      }
+
+      .feature-item {
+        grid-template-columns: 44px 1fr;
+        padding: 18px;
+      }
+
+      .feature-icon,
+      .step-number {
+        width: 44px;
+        height: 44px;
+        font-size: 20px;
+      }
+
+      .variety-card,
+      .order-card,
+      .contact-form,
+      .contact-panel {
+        padding: 22px;
+      }
+
+      .button {
+        width: 100%;
+      }
+
+      .footer-inner {
+        display: grid;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="#top" class="logo" aria-label="松川りんご農園（仮） トップへ">
+        <span class="logo-mark" aria-hidden="true">り</span>
+        <span>松川りんご農園（仮）</span>
+      </a>
+      <button class="nav-toggle" type="button" aria-label="メニューを開閉" aria-expanded="false" aria-controls="site-nav">
+        <span aria-hidden="true"></span>
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="主要ナビゲーション">
+        <a href="#about">農園について</a>
+        <a href="#varieties">りんごの種類</a>
+        <a href="#order">ご注文</a>
+        <a href="#contact">お問い合わせ</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero" aria-label="松川りんご農園（仮）の紹介">
+      <div class="hero-inner">
+        <p class="eyebrow">長野県北安曇郡松川村から産地直送</p>
+        <h1>北アルプスの恵みで育てた、信州のりんご</h1>
+        <p>松川村で4代続く農園が、昼夜の寒暖差と澄んだ水に育まれた旬の味を、ご家庭へ、贈り物へ、まっすぐお届けします。</p>
+        <a class="button" href="#contact">ご注文はこちら</a>
+      </div>
+    </section>
+
+    <section class="section alt" id="about">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-kicker">ABOUT</p>
+          <h2 class="section-title">松川村の風土に寄り添う、小さなりんご農園です</h2>
+        </div>
+        <div class="about-grid">
+          <div>
+            <p class="about-copy">松川りんご農園（仮）は、北アルプスを望む長野県北安曇郡松川村で、親子四代にわたりりんごを育てている小さな農園です。</p>
+            <p class="about-copy">標高約600メートルの畑では、朝晩の冷え込みがりんごの実を引き締め、香りと甘みをゆっくり深めてくれます。</p>
+            <p class="about-copy">収穫時期には一玉ずつ色づきと硬さを見ながら選果し、産直ならではの鮮度を大切に箱詰めしています。</p>
+            <p class="about-copy">ご自宅用はもちろん、季節のご挨拶や大切な方への贈り物として、松川村の秋の味わいをお楽しみください。</p>
+          </div>
+          <ul class="feature-list">
+            <li class="feature-item">
+              <span class="feature-icon" aria-hidden="true">土</span>
+              <div>
+                <h3>土づくりから丁寧に</h3>
+                <p>有機質を活かした畑づくりで、根が健やかに張る環境を整えています。</p>
+              </div>
+            </li>
+            <li class="feature-item">
+              <span class="feature-icon" aria-hidden="true">山</span>
+              <div>
+                <h3>北アルプスを望む産地</h3>
+                <p>清らかな水と寒暖差に恵まれたりんご栽培に適した松川村の畑です。</p>
+              </div>
+            </li>
+            <li class="feature-item">
+              <span class="feature-icon" aria-hidden="true">旬</span>
+              <div>
+                <h3>旬を見極めて収穫</h3>
+                <p>品種ごとの食べごろを見ながら、10月から11月にかけて順次発送します。</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="varieties">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-kicker">VARIETIES</p>
+          <h2 class="section-title">信州生まれの品種を中心に、旬のりんごをお届けします</h2>
+          <p class="lead">発送時期や在庫は収穫状況により変わります。贈答用の詰め合わせもご相談ください。</p>
+        </div>
+        <div class="card-grid">
+          <article class="variety-card">
+            <span class="apple-icon" aria-hidden="true">🍎</span>
+            <h3>ふじ</h3>
+            <span class="season">10〜11月収穫</span>
+            <p>甘みと酸味のバランスがよく、蜜が入りやすい定番品種。歯ざわりのよさも人気です。</p>
+          </article>
+          <article class="variety-card">
+            <span class="apple-icon" aria-hidden="true">🍎</span>
+            <h3>シナノスイート</h3>
+            <span class="season">10月収穫</span>
+            <p>糖度が高く、名前のとおりしっかり甘い信州品種。お子さまにも食べやすい味わいです。</p>
+          </article>
+          <article class="variety-card">
+            <span class="apple-icon" aria-hidden="true">🍎</span>
+            <h3>シナノゴールド</h3>
+            <span class="season">10〜11月収穫</span>
+            <p>黄色い果皮と爽やかな甘さ、ほどよい酸味が魅力。香りがよく、ギフトにも映える品種です。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt" id="order">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-kicker">ORDER</p>
+          <h2 class="section-title">ご用途に合わせて、直売・宅配・ギフトに対応します</h2>
+        </div>
+        <div class="card-grid">
+          <article class="order-card">
+            <span class="step-number" aria-hidden="true">01</span>
+            <h3>直売</h3>
+            <p>収穫期には農園での直売を行います。品種や箱数は来園前にお問い合わせください。</p>
+          </article>
+          <article class="order-card">
+            <span class="step-number" aria-hidden="true">02</span>
+            <h3>宅配</h3>
+            <p>ご家庭用の箱詰めを全国発送いたします。旬の品種を農園から直接お届けします。</p>
+          </article>
+          <article class="order-card">
+            <span class="step-number" aria-hidden="true">03</span>
+            <h3>ギフト対応</h3>
+            <p>お歳暮や季節のご挨拶に合わせた贈答用箱をご用意します。のしのご相談も承ります。</p>
+          </article>
+        </div>
+        <p class="order-note">お電話またはお問い合わせフォームよりご注文ください。収穫量に限りがあるため、早めのご予約がおすすめです。</p>
+      </div>
+    </section>
+
+    <section class="section" id="contact">
+      <div class="container">
+        <div class="contact-wrap">
+          <div class="contact-panel">
+            <h2 class="section-title" style="color: #fff;">お問い合わせ・ご注文</h2>
+            <p>ご希望の品種、箱数、お届け先、ご利用時期をお知らせください。収穫状況を確認し、折り返しご連絡いたします。</p>
+            <ul class="farm-info">
+              <li>松川りんご農園（仮）</li>
+              <li>長野県北安曇郡松川村</li>
+              <li>受付時間 9:00〜17:00</li>
+            </ul>
+          </div>
+          <form class="contact-form" action="" method="post" data-demo-form>
+            <div class="field">
+              <label for="name">お名前</label>
+              <input id="name" name="name" type="text" autocomplete="name" required>
+            </div>
+            <div class="field">
+              <label for="email">メールアドレス</label>
+              <input id="email" name="email" type="email" autocomplete="email" required>
+            </div>
+            <div class="field">
+              <label for="message">お問い合わせ内容</label>
+              <textarea id="message" name="message" required placeholder="例：ふじの贈答用5kgを2箱、11月中旬ごろに発送希望です。"></textarea>
+            </div>
+            <button class="button" type="submit">送信する</button>
+            <p class="form-message" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div><span class="footer-name">松川りんご農園（仮）</span>｜長野県北安曇郡松川村</div>
+      <div>&copy; 2026 Matsukawa Ringo Farm Demo. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <script>
+    const navToggle = document.querySelector(".nav-toggle");
+    const siteNav = document.querySelector(".site-nav");
+
+    navToggle.addEventListener("click", () => {
+      const isOpen = siteNav.classList.toggle("is-open");
+      navToggle.setAttribute("aria-expanded", String(isOpen));
+    });
+
+    siteNav.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", () => {
+        siteNav.classList.remove("is-open");
+        navToggle.setAttribute("aria-expanded", "false");
+      });
+    });
+
+    document.querySelector("[data-demo-form]").addEventListener("submit", (event) => {
+      const form = event.currentTarget;
+      const hasAction = form.getAttribute("action").trim().length > 0;
+      if (!hasAction) {
+        event.preventDefault();
+        form.querySelector(".form-message").textContent = "デモフォームです。公開時にFormspreeの送信先を設定します。";
+      }
+    });
+  </script>
+</body>
+</html>

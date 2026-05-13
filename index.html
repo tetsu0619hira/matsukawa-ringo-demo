@@ -237,6 +237,29 @@
       outline: none;
     }
 
+    .submit-button {
+      justify-self: start;
+      min-height: 48px;
+      padding: 0 24px;
+      border: 1px solid rgba(27, 67, 50, 0.18);
+      border-radius: var(--radius);
+      background: var(--forest-dark);
+      color: #fff;
+      font: inherit;
+      font-weight: 800;
+      cursor: pointer;
+      box-shadow: 0 12px 22px rgba(27, 67, 50, 0.18);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+    }
+
+    .submit-button:hover,
+    .submit-button:focus-visible {
+      transform: translateY(-1px);
+      background: var(--forest);
+      box-shadow: 0 16px 26px rgba(27, 67, 50, 0.22);
+      outline: none;
+    }
+
     .section {
       padding: 92px 0;
     }
@@ -681,7 +704,8 @@
         padding: 22px;
       }
 
-      .button {
+      .button,
+      .submit-button {
         width: 100%;
       }
 
@@ -842,7 +866,7 @@
               <label for="message">お問い合わせ内容</label>
               <textarea id="message" name="message" required placeholder="例：ふじの贈答用5kgを2箱、11月中旬ごろに発送希望です。"></textarea>
             </div>
-            <button class="button" type="submit">送信する</button>
+            <button class="submit-button" type="submit">内容を送信する</button>
             <p class="form-message" aria-live="polite"></p>
           </form>
         </div>
@@ -854,6 +878,7 @@
     <div class="footer-inner">
       <div><span class="footer-name">松川りんご農園（仮）</span>｜長野県北安曇郡松川村</div>
       <div>&copy; 2026 Matsukawa Ringo Farm Demo. All rights reserved.</div>
+      <div style="margin-top:6px;font-size:.8rem;opacity:.7;">Designed by tetsuhiro hirabayashi</div>
     </div>
   </footer>
 

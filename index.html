@@ -281,6 +281,17 @@
       overflow-wrap: anywhere;
     }
 
+    .highlight {
+      color: var(--apple-red);
+      font-weight: 900;
+    }
+
+    .highlight-green {
+      color: var(--forest-dark);
+      font-weight: 900;
+      background: linear-gradient(transparent 62%, rgba(64, 145, 108, 0.18) 62%);
+    }
+
     .about-grid {
       display: grid;
       grid-template-columns: minmax(0, 1.1fr) minmax(300px, 0.9fr);
@@ -309,18 +320,22 @@
     .feature-item,
     .variety-card,
     .order-card {
-      background: rgba(255, 252, 247, 0.86);
       border: 1px solid var(--line);
       border-radius: var(--radius);
       box-shadow: var(--shadow);
     }
 
     .feature-item {
+      position: relative;
       display: grid;
       grid-template-columns: 52px 1fr;
       gap: 16px;
       align-items: start;
       padding: 22px;
+      overflow: hidden;
+      background:
+        linear-gradient(90deg, rgba(255, 252, 247, 0.94), rgba(255, 252, 247, 0.78)),
+        var(--card-bg, linear-gradient(#fff, #fff)) center / cover no-repeat;
     }
 
     .feature-icon,
@@ -349,7 +364,7 @@
     .variety-card p,
     .order-card p {
       margin: 0;
-      color: var(--muted);
+      color: #51453E;
       font-size: 15px;
     }
 
@@ -364,17 +379,24 @@
       min-height: 282px;
       padding: 30px;
       overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      color: #fff;
+      background:
+        linear-gradient(180deg, rgba(21, 44, 33, 0.08), rgba(21, 44, 33, 0.82) 58%, rgba(21, 44, 33, 0.94)),
+        var(--card-bg) center / cover no-repeat;
     }
 
     .variety-card::after {
       content: "";
       position: absolute;
-      right: -45px;
-      bottom: -50px;
-      width: 140px;
-      height: 140px;
+      inset: 0;
+      width: auto;
+      height: auto;
       border-radius: 50%;
-      background: rgba(192, 57, 43, 0.09);
+      background: radial-gradient(circle at 80% 16%, rgba(255, 255, 255, 0.18), transparent 26%);
+      pointer-events: none;
     }
 
     .apple-icon {
@@ -382,23 +404,41 @@
       margin-bottom: 16px;
       font-size: 42px;
       line-height: 1;
+      filter: drop-shadow(0 8px 14px rgba(0, 0, 0, 0.28));
+    }
+
+    .variety-card h3 {
+      color: #fff;
+      text-shadow: 0 2px 16px rgba(0, 0, 0, 0.34);
     }
 
     .season {
       display: inline-flex;
+      align-self: flex-start;
       align-items: center;
       min-height: 30px;
       margin: 16px 0 12px;
       padding: 0 12px;
       border-radius: 999px;
-      background: rgba(192, 57, 43, 0.1);
+      background: rgba(255, 252, 247, 0.88);
       color: #9D2C22;
       font-size: 13px;
       font-weight: 800;
     }
 
+    .variety-card p {
+      color: rgba(255, 255, 255, 0.88);
+      text-shadow: 0 2px 14px rgba(0, 0, 0, 0.28);
+    }
+
     .order-card {
+      position: relative;
       padding: 28px;
+      min-height: 220px;
+      overflow: hidden;
+      background:
+        linear-gradient(180deg, rgba(255, 252, 247, 0.95), rgba(255, 252, 247, 0.82)),
+        var(--card-bg, linear-gradient(#fff, #fff)) center / cover no-repeat;
     }
 
     .step-number {
@@ -675,7 +715,7 @@
       <div class="hero-inner">
         <p class="eyebrow">長野県北安曇郡松川村から産地直送</p>
         <h1>北アルプスの恵みで<br>育てた、<br>信州のりんご</h1>
-        <p>松川村で4代続く農園が、昼夜の寒暖差と澄んだ水に育まれた旬の味を、ご家庭へ、贈り物へ、まっすぐお届けします。</p>
+        <p>松川村で<span class="highlight">4代続く農園</span>が、昼夜の寒暖差と澄んだ水に育まれた旬の味を、<span class="highlight">ご家庭へ、贈り物へ</span>、まっすぐお届けします。</p>
         <a class="button" href="#contact">ご注文はこちら</a>
       </div>
     </section>
@@ -688,27 +728,27 @@
         </div>
         <div class="about-grid">
           <div>
-            <p class="about-copy">松川りんご農園（仮）は、北アルプスを望む長野県北安曇郡松川村で、親子四代にわたりりんごを育てている小さな農園です。</p>
-            <p class="about-copy">標高約600メートルの畑では、朝晩の冷え込みがりんごの実を引き締め、香りと甘みをゆっくり深めてくれます。</p>
-            <p class="about-copy">収穫時期には一玉ずつ色づきと硬さを見ながら選果し、産直ならではの鮮度を大切に箱詰めしています。</p>
-            <p class="about-copy">ご自宅用はもちろん、季節のご挨拶や大切な方への贈り物として、松川村の秋の味わいをお楽しみください。</p>
+            <p class="about-copy">松川りんご農園（仮）は、北アルプスを望む長野県北安曇郡松川村で、<span class="highlight-green">親子四代にわたり</span>りんごを育てている小さな農園です。</p>
+            <p class="about-copy">標高約600メートルの畑では、<span class="highlight-green">朝晩の冷え込み</span>がりんごの実を引き締め、香りと甘みをゆっくり深めてくれます。</p>
+            <p class="about-copy">収穫時期には一玉ずつ色づきと硬さを見ながら選果し、<span class="highlight">産直ならではの鮮度</span>を大切に箱詰めしています。</p>
+            <p class="about-copy">ご自宅用はもちろん、季節のご挨拶や大切な方への贈り物として、<span class="highlight-green">松川村の秋の味わい</span>をお楽しみください。</p>
           </div>
           <ul class="feature-list">
-            <li class="feature-item">
+            <li class="feature-item" style="--card-bg: url('assets/apple-blossom.jpg');">
               <span class="feature-icon" aria-hidden="true">土</span>
               <div>
                 <h3>土づくりから丁寧に</h3>
                 <p>有機質を活かした畑づくりで、根が健やかに張る環境を整えています。</p>
               </div>
             </li>
-            <li class="feature-item">
+            <li class="feature-item" style="--card-bg: url('assets/hero-orchard.jpg');">
               <span class="feature-icon" aria-hidden="true">山</span>
               <div>
                 <h3>北アルプスを望む産地</h3>
                 <p>清らかな水と寒暖差に恵まれたりんご栽培に適した松川村の畑です。</p>
               </div>
             </li>
-            <li class="feature-item">
+            <li class="feature-item" style="--card-bg: url('assets/apple-red.jpg');">
               <span class="feature-icon" aria-hidden="true">旬</span>
               <div>
                 <h3>旬を見極めて収穫</h3>
@@ -724,23 +764,23 @@
       <div class="container">
         <div class="section-heading">
           <p class="section-kicker">VARIETIES</p>
-          <h2 class="section-title">信州生まれの品種を中心に、旬のりんごをお届けします</h2>
-          <p class="lead">発送時期や在庫は収穫状況により変わります。贈答用の詰め合わせもご相談ください。</p>
+          <h2 class="section-title">信州生まれの品種を中心に、<br>旬のりんごをお届けします</h2>
+          <p class="lead">発送時期や在庫は<span class="highlight-green">収穫状況により変わります</span>。贈答用の詰め合わせもご相談ください。</p>
         </div>
         <div class="card-grid">
-          <article class="variety-card">
+          <article class="variety-card" style="--card-bg: url('assets/apple-red.jpg');">
             <span class="apple-icon" aria-hidden="true">🍎</span>
             <h3>ふじ</h3>
             <span class="season">10〜11月収穫</span>
             <p>甘みと酸味のバランスがよく、蜜が入りやすい定番品種。歯ざわりのよさも人気です。</p>
           </article>
-          <article class="variety-card">
+          <article class="variety-card" style="--card-bg: url('assets/apple-orchard-close.jpg');">
             <span class="apple-icon" aria-hidden="true">🍎</span>
             <h3>シナノスイート</h3>
             <span class="season">10月収穫</span>
             <p>糖度が高く、名前のとおりしっかり甘い信州品種。お子さまにも食べやすい味わいです。</p>
           </article>
-          <article class="variety-card">
+          <article class="variety-card" style="--card-bg: url('assets/apple-gold.jpg');">
             <span class="apple-icon" aria-hidden="true">🍎</span>
             <h3>シナノゴールド</h3>
             <span class="season">10〜11月収穫</span>
@@ -754,26 +794,26 @@
       <div class="container">
         <div class="section-heading">
           <p class="section-kicker">ORDER</p>
-          <h2 class="section-title">ご用途に合わせて、直売・宅配・ギフトに対応します</h2>
+          <h2 class="section-title">ご用途に合わせて、<br>直売・宅配・ギフトに対応します</h2>
         </div>
         <div class="card-grid">
-          <article class="order-card">
+          <article class="order-card" style="--card-bg: url('assets/hero-orchard.jpg');">
             <span class="step-number" aria-hidden="true">01</span>
             <h3>直売</h3>
             <p>収穫期には農園での直売を行います。品種や箱数は来園前にお問い合わせください。</p>
           </article>
-          <article class="order-card">
+          <article class="order-card" style="--card-bg: url('assets/apple-red.jpg');">
             <span class="step-number" aria-hidden="true">02</span>
             <h3>宅配</h3>
             <p>ご家庭用の箱詰めを全国発送いたします。旬の品種を農園から直接お届けします。</p>
           </article>
-          <article class="order-card">
+          <article class="order-card" style="--card-bg: url('assets/apple-gold.jpg');">
             <span class="step-number" aria-hidden="true">03</span>
             <h3>ギフト対応</h3>
             <p>お歳暮や季節のご挨拶に合わせた贈答用箱をご用意します。のしのご相談も承ります。</p>
           </article>
         </div>
-        <p class="order-note">お電話またはお問い合わせフォームよりご注文ください。収穫量に限りがあるため、早めのご予約がおすすめです。</p>
+        <p class="order-note">お電話またはお問い合わせフォームよりご注文ください。<span class="highlight">収穫量に限りがあるため、早めのご予約がおすすめです。</span></p>
       </div>
     </section>
 
@@ -782,7 +822,7 @@
         <div class="contact-wrap">
           <div class="contact-panel">
             <h2 class="section-title" style="color: #fff;">お問い合わせ・ご注文</h2>
-            <p>ご希望の品種、箱数、お届け先、ご利用時期をお知らせください。収穫状況を確認し、折り返しご連絡いたします。</p>
+            <p>ご希望の品種、箱数、お届け先、ご利用時期をお知らせください。<strong>収穫状況を確認し、折り返しご連絡いたします。</strong></p>
             <ul class="farm-info">
               <li>松川りんご農園（仮）</li>
               <li>長野県北安曇郡松川村</li>

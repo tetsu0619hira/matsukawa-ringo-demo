@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="長野県北安曇郡松川村の松川りんご農園（仮）。北アルプスの恵みで育てた、ふじ・シナノスイート・シナノゴールドなど信州りんごの産直・ギフト注文を承ります。">
-  <title>松川りんご農園（仮）｜長野県松川村の信州りんご産直</title>
+  <meta name="description" content="長野県北安曇郡松川村の松川りんご農園（仮）。北アルプスの恵みで育てた、ふじ・シナノスイート・シナノゴールドなど信州りんごの産直注文を承ります。季節により桃・ぶどうの販売もご相談ください。">
+  <title>松川りんご農園（仮）｜長野県松川村の信州りんご・季節の果物</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
@@ -397,6 +397,73 @@
       gap: 22px;
     }
 
+    .seasonal-fruits {
+      margin-top: 34px;
+      padding: 28px;
+      border: 1px solid rgba(45, 106, 79, 0.14);
+      border-radius: var(--radius);
+      background:
+        linear-gradient(90deg, rgba(255, 252, 247, 0.94), rgba(255, 252, 247, 0.78)),
+        url("assets/apple-blossom.jpg") center / cover no-repeat;
+      box-shadow: var(--shadow);
+    }
+
+    .seasonal-fruits h3 {
+      margin: 0 0 8px;
+      color: var(--forest-dark);
+      font-size: 24px;
+      line-height: 1.4;
+    }
+
+    .seasonal-fruits > p {
+      margin: 0 0 18px;
+      color: #51453E;
+    }
+
+    .seasonal-list {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .seasonal-list li {
+      display: grid;
+      grid-template-columns: 42px 1fr;
+      gap: 12px;
+      align-items: start;
+      padding: 16px;
+      border-radius: var(--radius);
+      background: rgba(255, 252, 247, 0.82);
+      border: 1px solid rgba(45, 36, 31, 0.1);
+    }
+
+    .fruit-mark {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: rgba(192, 57, 43, 0.1);
+      font-size: 22px;
+    }
+
+    .seasonal-list strong {
+      display: block;
+      color: var(--forest-dark);
+      font-size: 17px;
+      line-height: 1.4;
+    }
+
+    .seasonal-list span:last-child {
+      display: block;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
     .variety-card {
       position: relative;
       min-height: 282px;
@@ -633,6 +700,10 @@
       .card-grid {
         grid-template-columns: 1fr;
       }
+
+      .seasonal-list {
+        grid-template-columns: 1fr;
+      }
     }
 
     @media (max-width: 560px) {
@@ -811,6 +882,20 @@
             <p>黄色い果皮と爽やかな甘さ、ほどよい酸味が魅力。香りがよく、ギフトにも映える品種です。</p>
           </article>
         </div>
+        <div class="seasonal-fruits">
+          <h3>桃・ぶどうなど、季節の果物もご相談ください</h3>
+          <p>りんごを中心に育てながら、今後は<span class="highlight-green">桃やぶどうの販売</span>も少しずつご案内していく予定です。収穫時期や数量は年により変わるため、気になる方はお問い合わせください。</p>
+          <ul class="seasonal-list">
+            <li>
+              <span class="fruit-mark" aria-hidden="true">🍑</span>
+              <span><strong>桃</strong><span>夏の贈り物やご家庭用として、収穫状況に合わせてご案内予定です。</span></span>
+            </li>
+            <li>
+              <span class="fruit-mark" aria-hidden="true">🍇</span>
+              <span><strong>ぶどう</strong><span>秋口の季節商品として、販売開始時期が決まり次第お知らせします。</span></span>
+            </li>
+          </ul>
+        </div>
       </div>
     </section>
 
@@ -818,7 +903,7 @@
       <div class="container">
         <div class="section-heading">
           <p class="section-kicker">ORDER</p>
-          <h2 class="section-title">ご用途に合わせて、<br>直売・宅配・ギフトに対応します</h2>
+          <h2 class="section-title">ご用途に合わせて、<br>直売・発送に対応します</h2>
         </div>
         <div class="card-grid">
           <article class="order-card" style="--card-bg: url('assets/hero-orchard.jpg');">
@@ -828,13 +913,13 @@
           </article>
           <article class="order-card" style="--card-bg: url('assets/apple-red.jpg');">
             <span class="step-number" aria-hidden="true">02</span>
-            <h3>宅配</h3>
-            <p>ご家庭用の箱詰めを全国発送いたします。旬の品種を農園から直接お届けします。</p>
+            <h3>宅配・ギフト発送</h3>
+            <p>ご家庭用も贈答用も、農園で箱詰めして全国発送いたします。のしのご相談も承ります。</p>
           </article>
           <article class="order-card" style="--card-bg: url('assets/apple-gold.jpg');">
             <span class="step-number" aria-hidden="true">03</span>
-            <h3>ギフト対応</h3>
-            <p>お歳暮や季節のご挨拶に合わせた贈答用箱をご用意します。のしのご相談も承ります。</p>
+            <h3>季節商品のご相談</h3>
+            <p>りんごのほか、桃やぶどうの販売予定もあります。時期や数量はお問い合わせください。</p>
           </article>
         </div>
         <p class="order-note">お電話またはお問い合わせフォームよりご注文ください。<span class="highlight">収穫量に限りがあるため、早めのご予約がおすすめです。</span></p>
